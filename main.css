@@ -3,15 +3,19 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: white;
-    height: 70px;
     text-align: center;
     border-bottom: dotted 1px black;
+    margin-top: 20px;
+    background-color: #ba8be4;
+    font-weight: 200;
     
 }
 
+
 #stickme p{
     padding-top:  20px;
+    letter-spacing: 1px;
+    font-size: 1.5em;
 }
 
 #time {
@@ -35,7 +39,7 @@
 }
 
 
-
+/*
 @media screen and (max-width: 400px) {
 
     #stickme {

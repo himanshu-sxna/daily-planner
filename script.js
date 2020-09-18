@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    let time = moment().format("ddd Do MMMM, YYYY");
+    let time = moment().format("[Today is] dddd, MMMM Do YYYY")
 
     let setHour = moment().set("hour", 7);
 
@@ -14,18 +14,15 @@ $(document).ready(function() {
         let y = "";
 
         if (x < 10){
-
             y = "0" + x;
         }else{
-
             y = x;
         }
 
         $("#plannerTable").append('<tr><td>' + y +':00</td><td id="hour' + y + 'td" class="center aligned tasktd"></td><td class="right aligned"><button class="ui basic circular orange icon button addEvent" id="hour' + y + 'btn"><i class="calendar plus outline icon"></i></button><button class="ui basic circular green icon button done-btn" id="mark' + y + 'btn"><i class="calendar check outline icon"></i></button><button class="ui basic circular black icon button del-btn" id="del' + y + 'btn"><i class="calendar times outline icon"></i></button></td></tr>');
+
         }
 
-
-        
     $("td:first-child").each(function () {
         
         eachHour = $(this).text();
@@ -56,8 +53,8 @@ $(document).ready(function() {
 
     $(".addEvent").click(function(){
 
-        let btnID = $(this).attr("id");
-        let chngAddEventBtnID = (btnID.substring(0,6) + "td");
+        let getbtnID = $(this).attr("id");
+        let chngAddEventBtnID = (getbtnID.substring(0,6) + "td");
         let userTask = $("#userInput");
 
         $('.ui.modal')
@@ -93,5 +90,18 @@ $(document).ready(function() {
             localStorage.setItem((chngMarkBtnID + "css"), "line-through");
         }
     })
+
+    $(".del-btn").click(function(){
+
+        let getdelBtn = $(this).attr("id");
+
+        let chngDelBtnID = ("hour" + getdelBtn.substring(3,5) + "td");
+
+        localStorage.setItem(chngDelBtnID, "");
+
+        $("#" + chngDelBtnID).html(localStorage.getItem(chngDelBtnID));
+
+    })
+
 });
   
