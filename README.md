@@ -31,7 +31,6 @@ Each hour timeblock has 3 buttons:
 * *Green button* - Mark task as done
 
 * *Black button* - Remove a task
-* 
 ![Image of Daily Planner buttons](/images/buttons.JPG)
 
 ## App Link
