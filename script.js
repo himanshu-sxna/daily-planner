@@ -1,21 +1,26 @@
 $(document).ready(function() {
 
+
+    // set the current day using moment.js
     let time = moment().format("[Today is] dddd, MMMM Do YYYY")
 
-    let setHour = moment().set("hour", 7);
-
+    //set the current hour using moment.js
     let currentHour = moment().hour();
-
+    
+    //set the page header html to current day
     $("#currentTime").html(time);
 
-
+    /* The below for loop generates the html table for the webpage
+        The table has 1 row for each time block with 3 buttons
+        It aslo prefixes a 0 in formt of one digit hours i.e 07:00 */
     for (x = 7; x <= 23; x++){
 
         let y = "";
 
         if (x < 10){
             y = "0" + x;
-        }else{
+
+        }else   {
             y = x;
         }
 
@@ -23,6 +28,11 @@ $(document).ready(function() {
 
         }
 
+
+    /* The below function color codes the timeblocks
+        It sets the css background color by comparing 
+        the split hour number from the row id
+        and compares it to currenthour */
     $("td:first-child").each(function () {
         
         eachHour = $(this).text();
@@ -38,7 +48,9 @@ $(document).ready(function() {
     })
 
     
-    
+    /* The below function loads any saved tasks form local storage on page refresh.
+        It also sets the task to be marked as done, css -text decoration
+         if the user had clicked on the button */
     $("tr td:nth-child(2)").each(function(){
 
         let trID = $(this).attr("id");
@@ -50,7 +62,9 @@ $(document).ready(function() {
     
     });
     
-
+    /* Add an event to the time row on button click
+        the clock event triggers a modal that user can input their task into
+        the modal checks for a balnk input but will accept anything */
     $(".addEvent").click(function(){
 
         let getbtnID = $(this).attr("id");
@@ -75,22 +89,32 @@ $(document).ready(function() {
         $("#modal-error").hide();
     }); 
 
+    /* button to change the taks css text -decoration property
+        it is to indicate a task as done or not done
+        it does a check to see if there is a task for that row */
     $(".done-btn").click(function(){
 
         let getmarkBtn = $(this).attr("id");
         let chngMarkBtnID = ("hour" + getmarkBtn.substring(4,6) + "td");
 
-        let getLinePropoerty = $("#" + chngMarkBtnID).css("text-decoration-line");
+        let getLineProperty = $("#" + chngMarkBtnID).css("text-decoration-line");
 
-        if(getLinePropoerty === "line-through") {
-            $("#" + chngMarkBtnID).css("text-decoration", "none");
-            localStorage.setItem((chngMarkBtnID + "css"), "none");
+        if ($("#" + chngMarkBtnID).html() === ""){
+                alert("Please add a task");
         } else {
-            $("#" + chngMarkBtnID).css("text-decoration", "line-through");
-            localStorage.setItem((chngMarkBtnID + "css"), "line-through");
+            if(getLineProperty === "line-through") {
+                $("#" + chngMarkBtnID).css("text-decoration", "none");
+                localStorage.setItem((chngMarkBtnID + "css"), "none");
+            } else {
+                $("#" + chngMarkBtnID).css("text-decoration", "line-through");
+                localStorage.setItem((chngMarkBtnID + "css"), "line-through");
+            }
         }
+
     })
 
+    /* delete button  to delete a task and remove it's value from
+        local storage, the key still remains stored */
     $(".del-btn").click(function(){
 
         let getdelBtn = $(this).attr("id");

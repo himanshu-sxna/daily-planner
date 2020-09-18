@@ -10,11 +10,14 @@
 <body>
 
     <div class="ui container">
+      <!-- Header-->
       <div class="ui block top attached header" id="stickme">
         <p id="currentTime"></p>
       </div>
+      <!-- The start of the calendar table -->
         <table class="ui stackable padded large table">
             <tbody id="plannerTable">
+              <!-- The below code for the table is now generated via a function-->
               <!--
               <tr>
                 <td>07:00</td>
@@ -227,6 +230,7 @@
                 </td>
               </tr>
             -->
+            <!-- Footer -->
               <tfoot class="full-width">
                 <tr>
                   <th></th>
@@ -238,6 +242,7 @@
         <div class="row"></div>
     </div>
 
+    <!-- The modal that is displayed to the user for task input-->
     <div class="ui modal">
         <i class="close icon"></i>
         <div class="header">
@@ -257,11 +262,13 @@
       </div>
         
     
-
+    <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Semantic UI-->
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+    <!-- moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <!-- local script -->
     <script src="script.js"></script>
 </body>
 </html>
