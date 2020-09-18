@@ -1,0 +1,44 @@
+
+#stickme {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    height: 70px;
+    text-align: center;
+    border-bottom: dotted 1px black;
+    
+}
+
+#stickme p{
+    padding-top:  20px;
+}
+
+#time {
+    font-size: 1.5em;
+}
+
+#task {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#modal-error {
+    font: size 0.25em;
+    color: red;
+    display: none;
+}
+
+.done-btn,
+.del-btn {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+    #stickme {
+        width: 398.4px;
+    }
+}

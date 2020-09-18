@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="/main.css">
+    <title>Daily Planner</title>
+</head>
+<body>
+
+    <div class="ui container">
+        <div id="stickme">
+            <p id="currentTime">  </p>
+        </div>
+        <table class="ui stackable padded large table">
+            <tbody id="plannerTable">
+              <!--
+              <tr>
+                <td>07:00</td>
+                <td id="hour07td" class="center aligned tasktd"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour07btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark07btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button del-btn">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>08:00</td>
+                <td id="hour08td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour08btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark08btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>09:00</td>
+                <td id="hour09td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour09btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark09btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>10:00</td>
+                <td id="hour10td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour10btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark10btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>11:00</td>
+                <td id="hour11td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour11btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark11btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>12:00</td>
+                <td id="hour12td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour12btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark12btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>13:00</td>
+                <td id="hour13td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour13btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark13btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td id="hour14td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour14btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark14btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>15:00</td>
+                <td id="hour15td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour15btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark15btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>16:00</td>
+                <td id="hour16td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour16btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark16btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>17:00</td>
+                <td id="hour17td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour17btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark17btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>18:00</td>
+                <td id="hour18td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour18btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark18btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>19:00</td>
+                <td id="hour19td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour19btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark19btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>20:00</td>
+                <td id="hour20td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour20btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark20btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>21:00</td>
+                <td id="hour21td" class="center aligned"></td>
+                <td class="right aligned">
+                  <button class="ui basic circular orange icon button addEvent" id="hour21btn">
+                    <i class="calendar plus outline icon"></i></button>
+                  <button class="ui basic circular green icon button done-btn" id="mark21btn">
+                    <i class="calendar check outline icon"></i>
+                  </button>
+                  <button class="ui basic circular black icon button">
+                    <i class="calendar times outline icon"></i>
+                  </button>
+                </td>
+              </tr>
+            -->
+              <tfoot class="full-width">
+                <tr>
+                  <th></th>
+                  <th colspan="4">
+                    <div class="ui right floated small primary labeled icon button">
+                      <i class="user icon"></i> Add User
+                    </div>
+                    <div class="ui small  button">
+                      Approve
+                    </div>
+                    <div class="ui small  disabled button">
+                      Approve All
+                    </div>
+                  </th>
+                </tr>
+              </tfoot>
+        </table>
+        <div class="row"></div>
+    </div>
+
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Enter your Task
+        </div>
+        <div class="ui form">
+            <div class="field">
+              <label></label>
+              <textarea id="userInput" rows="2"></textarea>
+            </div>
+          </div>
+          <div class="content" id="modal-error"> Can't add a blank task. Click cancel if you want to be lazy.</div>
+        <div class="actions">
+          <div class="ui black deny button">Cancel</div>
+          <div class="ui positive right labeled icon button"">Add</div>
+        </div>
+      </div>
+        
+    
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
